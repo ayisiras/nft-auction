@@ -46,7 +46,7 @@ contract AuctionFactoryTest is Test {
         vm.prank(SELLER);
         nft.setApprovalForAll(auctionAddr, true);
 
-        // 卖家自己创建拍卖（✅ 权限正确）
+        // 卖家自己创建拍卖（权限正确）
         vm.prank(SELLER);
         auction.createAuction(address(nft), 0, 1 days, 0.1 ether, address(0));
 

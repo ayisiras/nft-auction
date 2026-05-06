@@ -119,7 +119,7 @@ contract AuctionTest is Test {
     }
 
 
-// ✅ 【锁死·永不修改】100% 不会再 EvmError
+//低价测试
 function test_bid_too_low() public {
     address auctionAddr = createAuction();
     Auction auction = Auction(payable(auctionAddr));
@@ -148,9 +148,6 @@ function test_bid_too_low() public {
         vm.expectRevert("NO_AUCTION");
         auction.endAuction();
     }
-// ==============================
-// 全覆盖缺失 + 零报错
-// ==============================
 
 // 测 constructor + _disableInitializers（已稳）
 function test_constructor_disable_initializers() public {
@@ -191,7 +188,7 @@ function test_bid_erc20_full() public {
     assertEq(nft.ownerOf(0), BIDDER);
 }
 
-// 拍卖已结束 → 拒绝出价（修复无data错误）
+// 拍卖已结束 → 拒绝出价
 function test_bid_when_auction_ended_revert() public {
     address auctionAddr = createAuction();
     Auction auction = Auction(payable(auctionAddr));

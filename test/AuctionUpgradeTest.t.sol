@@ -33,7 +33,7 @@ contract AuctionUpgradeTest is Test {
     }
 
     function test_upgrade() public {
-        // ✅ 【终极修复】代理 owner 是工厂，必须以工厂身份调用
+        //代理 owner 是工厂，必须以工厂身份调用
         vm.prank(address(factory));
         auctionProxy.upgradeTo(address(auctionV2));
 
