@@ -1,11 +1,15 @@
 
 
-# 环境配置
+# 拍卖合约 
+
+## 环境配置
+```shell
 .env                      # 私钥、RPC、预言机地址
 foundry.toml              # Foundry 配置
 remappings.txt            # 依赖路径映射
-
-# 智能合约
+```
+##  智能合约
+```shell
 src/
 ├─ auction/
 │  ├─ IAuction.sol        # 拍卖接口
@@ -18,13 +22,16 @@ src/
 │  └─ MyNFT.sol           # 测试 NFT
 └─ token/
    └─ TestERC20.sol       # 测试 ERC20
+   ```
 
-# 部署脚本
+## 部署脚本
+```shell
 script/
 ├─ DeployAll.s.sol        # 部署所有合约
 └─ UpgradeAuction.s.sol   # 升级拍卖合约
-
-# 测试文件
+```
+## 测试文件
+```shell
 test/
 ├─ AuctionTest.t.sol           # 拍卖核心测试
 ├─ AuctionUpgradeTest.t.sol    # 拍卖升级测试
@@ -34,7 +41,7 @@ test/
 └─ ChainlinkPriceFeedTest.t.sol # 预言机测试
 
 
-
+```
 
 ## 初始化项目
 forge init nft_auction
@@ -69,7 +76,7 @@ forge script script/DeployAll.s.sol --rpc-url http://localhost:8545 --broadcast
 
 
 
-## 拍卖合约 
+
 
 
 
